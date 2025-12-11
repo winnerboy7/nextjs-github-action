@@ -15,12 +15,12 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Dummy env vars for build (pages rendered at runtime with revalidate=0)
-ENV DATABASE_URL="mysql://tomdev:Sup32A6m1nAtT0Md3v_V32777@209.15.110.99:3306/tomdev"
-ENV DATABASE_HOST="209.15.110.99"
+ENV DATABASE_URL="mysql://user:pass@localhost:3306/db"
+ENV DATABASE_HOST="localhost"
 ENV DATABASE_PORT="3306"
-ENV DATABASE_USER="tomdev"
-ENV DATABASE_PASSWORD="Sup32A6m1nAtT0Md3v_V32777"
-ENV DATABASE_NAME="tomdev"
+ENV DATABASE_USER="user"
+ENV DATABASE_PASSWORD="pass"
+ENV DATABASE_NAME="db"
 
 # Generate Prisma Client
 RUN npx prisma generate
