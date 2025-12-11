@@ -51,7 +51,7 @@ export default async function Home() {
         </div>
 
         {attractions.length === 0 && (
-          <p className="text-center text-zinc-500">No attractions found.</p>
+          <p className="text-center text-zinc-500">No attractions founded.</p>
         )}
       </div>
     </div>
