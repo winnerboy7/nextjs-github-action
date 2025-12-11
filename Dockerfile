@@ -15,6 +15,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Dummy env vars for build (pages rendered at runtime with revalidate=0)
+
 ENV DATABASE_URL="mysql://user:pass@localhost:3306/db"
 ENV DATABASE_HOST="localhost"
 ENV DATABASE_PORT="3306"
