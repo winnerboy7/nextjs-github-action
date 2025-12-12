@@ -58,3 +58,20 @@ chmod 600 ~/.ssh/authorized_keys
 # 3. Get the private key (copy this to GitHub secret)
 cat ~/.ssh/id_ed25519
 
+--------------------------------------------------------
+#Jenkins
+
+mkdir jenkins_home
+
+docker run -d --name jenkins-master -u root -p 8081:8080 -p 50000:50000 -v ~/jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+docker exec -it jenkins-master cat /var/jenkins_home/secrets/initialAdminPassword
+
+http://209.15.110.99:8081/
+
+e9ea2bdd9a25449eadf0ea6e8180f99d
+Username: admin
+Password: I3AIFERN
+
+References:
+https://www.melivecode.com/th/article/github-action-nextjs16#12-%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-github-actions-workflow
